@@ -1,0 +1,16 @@
+<script>
+      function updateButton(email, button) {
+        button.value = 'Clicked by ' + email;
+      }
+      
+      function onSuccess(val) { 
+        document.getElementById('usedValue').innerHTML = val + '%';
+      }
+      
+      function oops(error) {
+        document.getElementById('usedValue').innerHTML = error;
+      }
+      
+      google.script.run.withSuccessHandler(onSuccess).withFailureHandler(oops).getDriveUsed();
+</script>
+ 
